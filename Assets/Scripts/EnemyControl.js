@@ -1,12 +1,14 @@
 ﻿#pragma strict
 
 var speed: float = 2;
+var scoreDisplay: GUIText;
 
 private var ball: GameObject;
-
+private var score: float;
 
 function Start () {
 	ball = GameObject.Find("Ball");
+	score = 0;
 }
 
 function Update () {
@@ -18,3 +20,7 @@ function Update () {
 	transform.position.z = Mathf.Clamp(newZ,-8,8);
 }
 
+function AddScore(){
+ 	score++;
+ 	scoreDisplay.text = score.ToString();
+}

@@ -1,11 +1,11 @@
 ﻿#pragma strict
 
 var speed: float = 2;
+var scoreDisplay: GUIText;
 
 
-function Start () {
-
-}
+//private var labelPosition: Rect;
+private var score : int = 0;
 
 function Update () {
 	var axis = Input.GetAxis ("Vertical");
@@ -14,3 +14,8 @@ function Update () {
 }
 
 
+
+function AddScore(){
+ 	score++;
+ 	scoreDisplay.text = score.ToString();
+}
